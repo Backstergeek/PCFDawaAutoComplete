@@ -1,0 +1,26 @@
+#DawaList li:hover, #DawaList li:focus {
+    color: #DB6700;
+    cursor: pointer;
+}
+
+#DawaList li {
+    background: transparent;
+    border-width: 1px;
+    border-color: #000000;
+    color: #000000;
+    font-size: 1.0rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    width: 98%;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    outline: 0 !important;
+}
+
+#DawaList li {
+    overflow:hidden;
+    width: 90%;
+    display: inline-block;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}

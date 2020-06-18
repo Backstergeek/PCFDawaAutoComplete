@@ -21,3 +21,7 @@ export interface Adgangsadresse {
     y:                      number;
     href:                   string;
 }
+
+export interface IdawaProps {
+    changeAddress?: (add:string, zip:string, city:string) => void;
+}

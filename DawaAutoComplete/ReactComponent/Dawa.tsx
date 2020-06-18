@@ -1,8 +1,8 @@
 import * as React from 'react';
 import {TextField} from 'office-ui-fabric-react/lib/TextField'
-import { Idawa } from '../Interfaces/interface';
+import { Idawa, IdawaProps } from '../Interfaces/interface';
 
-export const Dawa: React.FC<Idawa[]> = () => {
+export const Dawa: React.FC<IdawaProps> = (props) => {
 
     const [add, setAdd] = React.useState<Idawa[]>([])
 
@@ -18,7 +18,10 @@ export const Dawa: React.FC<Idawa[]> = () => {
             }} />
             <ul id="DawaList" style={{listStyle: "none"}}>
                 {add.map(a => (
-                    <li key={a.adgangsadresse.id}>{a.tekst}</li>
+                    <li onClick={(e) => {
+                        if(props.changeAddress)
+                        props.changeAddress(a.adgangsadresse.vejnavn, a.adgangsadresse.postnr, a.adgangsadresse.postnrnavn)
+                    }} key={a.adgangsadresse.id}>{a.tekst}</li>
                 ))}
             </ul>
         </div>

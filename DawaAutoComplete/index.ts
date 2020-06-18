@@ -2,10 +2,25 @@ import {IInputs, IOutputs} from "./generated/ManifestTypes";
 import { Dawa } from "./ReactComponent/Dawa";
 import React = require("react");
 import ReactDOM = require("react-dom");
+import { stringify } from "querystring";
+import { IdawaProps } from "./Interfaces/interface";
 
 export class DawaAutoComplete implements ComponentFramework.StandardControl<IInputs, IOutputs> {
 
+	private localNotifyOutputChanged: () => void;
 	private _container: HTMLDivElement;
+	private _context: ComponentFramework.Context<IInputs>;
+	private _city: string;
+	private _zip: string;
+	private _address: string;
+
+
+	private changeAddress(add:string, zip:string, city:string) {
+		this._address = add;
+		this._city = city;
+		this._zip = zip;
+		this.localNotifyOutputChanged();
+	}
 	/**
 	 * Empty constructor.
 	 */
@@ -25,10 +40,17 @@ export class DawaAutoComplete implements ComponentFramework.StandardControl<IInp
 	public init(context: ComponentFramework.Context<IInputs>, notifyOutputChanged: () => void, state: ComponentFramework.Dictionary, container:HTMLDivElement)
 	{
 		this._container = container;
+		this._context = context;
+		this.localNotifyOutputChanged = notifyOutputChanged;
+
+		let props: IdawaProps = {
+			changeAddress: this.changeAddress.bind(this)
+		}
 
 		ReactDOM.render(
 			React.createElement(
-				Dawa
+				Dawa,
+				props
 			),
 			this._container
 		)
@@ -50,7 +72,11 @@ export class DawaAutoComplete implements ComponentFramework.StandardControl<IInp
 	 */
 	public getOutputs(): IOutputs
 	{
-		return {};
+		return {
+			City: this._city,
+			address: this._address,
+			zipcode: this._zip
+		};
 	}
 
 	/** 
