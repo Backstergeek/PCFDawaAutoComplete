@@ -2,7 +2,6 @@ import {IInputs, IOutputs} from "./generated/ManifestTypes";
 import { Dawa } from "./ReactComponent/Dawa";
 import React = require("react");
 import ReactDOM = require("react-dom");
-import { stringify } from "querystring";
 import { IdawaProps } from "./Interfaces/interface";
 
 export class DawaAutoComplete implements ComponentFramework.StandardControl<IInputs, IOutputs> {
