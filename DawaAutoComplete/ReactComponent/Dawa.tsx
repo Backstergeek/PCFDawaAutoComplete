@@ -18,9 +18,9 @@ export const Dawa: React.FC<IdawaProps> = (props) => {
             }} />
             <ul id="DawaList" style={{listStyle: "none"}}>
                 {add.map(a => (
-                    <li onClick={(e) => {
+                    <li onClick={() => {
                         if(props.changeAddress)
-                        props.changeAddress(a.adgangsadresse.vejnavn, a.adgangsadresse.postnr, a.adgangsadresse.postnrnavn)
+                        props.changeAddress(a.adgangsadresse.vejnavn, a.adgangsadresse.postnr, a.adgangsadresse.postnrnavn,a.adgangsadresse.husnr)
                     }} key={a.adgangsadresse.id}>{a.tekst}</li>
                 ))}
             </ul>

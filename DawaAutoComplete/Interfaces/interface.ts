@@ -11,7 +11,7 @@ export interface Adgangsadresse {
     vejnavn:                string;
     adresseringsvejnavn:    string;
     husnr:                  string;
-    supplerendebynavn:      null;
+    supplerendebynavn?:     string;
     postnr:                 string;
     postnrnavn:             string;
     stormodtagerpostnr:     null;
@@ -23,5 +23,5 @@ export interface Adgangsadresse {
 }
 
 export interface IdawaProps {
-    changeAddress?: (add:string, zip:string, city:string) => void;
+    changeAddress?: (add:string, zip:string, city:string, nr:string) => void;
 }
