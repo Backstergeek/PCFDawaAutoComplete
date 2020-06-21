@@ -2,7 +2,7 @@
 <manifest>
   <control namespace="DawaAutoComplete" constructor="DawaAutoComplete" version="0.0.1" display-name-key="DawaAutoComplete" description-key="DawaAutoComplete description" control-type="standard">
     <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
-    <property name="sampleProperty" display-name-key="Property_Display_Key" description-key="Property_Desc_Key" of-type="SingleLine.Text" usage="bound" required="true" />
+    <property name="BindingField" display-name-key="BindingField" description-key="Bind this to a singleLine text field" of-type="SingleLine.Text" usage="bound" required="true" />
     <property name="City" display-name-key="City" description-key="City" of-type="SingleLine.Text" usage="bound" required="false" />
     <property name="address" display-name-key="address" description-key="address" of-type="SingleLine.Text" usage="bound" required="false" />
     <property name="zipcode" display-name-key="zipcode" description-key="zipcode" of-type="SingleLine.Text" usage="bound" required="false" />

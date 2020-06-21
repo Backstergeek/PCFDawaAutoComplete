@@ -45,7 +45,7 @@ export class DawaAutoComplete implements ComponentFramework.StandardControl<IInp
 		let props: IdawaProps = {
 			changeAddress: this.changeAddress.bind(this)
 		}
-
+		
 		ReactDOM.render(
 			React.createElement(
 				Dawa,
