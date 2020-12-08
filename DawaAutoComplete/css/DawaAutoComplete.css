@@ -24,3 +24,8 @@
     text-overflow:ellipsis;
     white-space:nowrap;
 }
+
+#DawaList {
+    overflow: auto;
+    max-height: 200px;
+}

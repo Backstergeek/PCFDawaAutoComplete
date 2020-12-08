@@ -12,13 +12,15 @@ export class DawaAutoComplete implements ComponentFramework.StandardControl<IInp
 	private _zip: string;
 	private _address: string;
 	private _number: string;
+	private _fullAddress: string;
 
 
-	private changeAddress(add:string, zip:string, city:string, nr:string) {
+	private changeAddress(add:string, zip:string, city:string, nr:string, full:string) {
 		this._address = add;
 		this._city = city;
 		this._zip = zip;
 		this._number = nr;
+		this._fullAddress = full;
 		this.localNotifyOutputChanged();
 	}
 	/**
@@ -74,7 +76,8 @@ export class DawaAutoComplete implements ComponentFramework.StandardControl<IInp
 		return {
 			City: this._city,
 			address: `${this._address} ${this._number}`,
-			zipcode: this._zip
+			zipcode: this._zip,
+			fullAddress: this._fullAddress
 		};
 	}
 
@@ -84,6 +87,6 @@ export class DawaAutoComplete implements ComponentFramework.StandardControl<IInp
 	 */
 	public destroy(): void
 	{
-		// Add code to cleanup control if necessary
+		ReactDOM.unmountComponentAtNode(this._container);
 	}
 }

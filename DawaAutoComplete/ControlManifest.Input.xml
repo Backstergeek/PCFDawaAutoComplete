@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <manifest>
-  <control namespace="DawaAutoComplete" constructor="DawaAutoComplete" version="0.0.1" display-name-key="DawaAutoComplete" description-key="DawaAutoComplete description" control-type="standard">
+  <control namespace="DawaAutoComplete" constructor="DawaAutoComplete" version="0.0.2" display-name-key="DawaAutoComplete" description-key="DawaAutoComplete description" control-type="standard">
     <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
     <property name="BindingField" display-name-key="BindingField" description-key="Bind this to a singleLine text field" of-type="SingleLine.Text" usage="bound" required="true" />
     <property name="City" display-name-key="City" description-key="City" of-type="SingleLine.Text" usage="bound" required="false" />
     <property name="address" display-name-key="address" description-key="address" of-type="SingleLine.Text" usage="bound" required="false" />
     <property name="zipcode" display-name-key="zipcode" description-key="zipcode" of-type="SingleLine.Text" usage="bound" required="false" />
+    <property name="fullAddress" display-name-key="Full address" description-key="Full address" of-type="SingleLine.Text" usage="bound" required="false" />
     <!-- 
       Property node's of-type attribute can be of-type-group attribute. 
       Example:
