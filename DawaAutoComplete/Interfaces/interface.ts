@@ -1,3 +1,5 @@
+import { IInputs } from "../generated/ManifestTypes";
+
 export interface Idawa {
     tekst:          string;
     adgangsadresse: Adgangsadresse;
@@ -24,4 +26,5 @@ export interface Adgangsadresse {
 
 export interface IdawaProps {
     changeAddress?: (add:string, zip:string, city:string, nr:string, full:string) => void;
+    context: ComponentFramework.Context<IInputs>;
 }

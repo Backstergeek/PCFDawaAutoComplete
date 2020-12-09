@@ -8,6 +8,7 @@ export class DawaAutoComplete implements ComponentFramework.StandardControl<IInp
 
 	private localNotifyOutputChanged: () => void;
 	private _container: HTMLDivElement;
+	private _context: ComponentFramework.Context<IInputs>;
 	private _city: string;
 	private _zip: string;
 	private _address: string;
@@ -42,10 +43,12 @@ export class DawaAutoComplete implements ComponentFramework.StandardControl<IInp
 	public init(context: ComponentFramework.Context<IInputs>, notifyOutputChanged: () => void, state: ComponentFramework.Dictionary, container:HTMLDivElement)
 	{
 		this._container = container;
+		this._context = context;
 		this.localNotifyOutputChanged = notifyOutputChanged;
 
 		let props: IdawaProps = {
-			changeAddress: this.changeAddress.bind(this)
+			changeAddress: this.changeAddress.bind(this),
+			context: this._context
 		}
 		
 		ReactDOM.render(

@@ -15,7 +15,7 @@ export const Dawa: React.FC<IdawaProps> = (props) => {
 
     return (
         <div>
-            <TextField placeholder="Indtast en addresse"
+            <TextField placeholder={props.context.resources.getString("Place_Holder_Label")}
             onChange={async (event, value) =>{
                 await GetDawa((value !== undefined) ? value : "")
             }}
