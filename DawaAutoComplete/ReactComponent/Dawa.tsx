@@ -31,7 +31,9 @@ export const Dawa: React.FC<IdawaProps> = (props) => {
                             a.adgangsadresse.postnr, 
                             a.adgangsadresse.postnrnavn,
                             a.adgangsadresse.husnr,
-                            a.tekst)
+                            a.tekst,
+                            a.adgangsadresse.x,
+                            a.adgangsadresse.y)
                         setTemp("");
                         setAdd([]);
                     }} key={a.adgangsadresse.id}>{a.tekst}</li>

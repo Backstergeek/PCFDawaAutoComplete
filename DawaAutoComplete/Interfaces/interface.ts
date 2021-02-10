@@ -25,6 +25,6 @@ export interface Adgangsadresse {
 }
 
 export interface IdawaProps {
-    changeAddress?: (add:string, zip:string, city:string, nr:string, full:string) => void;
+    changeAddress?: (add:string, zip:string, city:string, nr:string, full:string, x:number,y:number) => void;
     context: ComponentFramework.Context<IInputs>;
 }

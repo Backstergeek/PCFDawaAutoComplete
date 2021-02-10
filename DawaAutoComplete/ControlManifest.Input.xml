@@ -9,6 +9,8 @@
     <property name="streetNumber" display-name-key="StreetNumber" description-key="Street number" of-type="SingleLine.Text" usage="bound" required="false" />
     <property name="zipcode" display-name-key="zipcode" description-key="zipcode" of-type="SingleLine.Text" usage="bound" required="false" />
     <property name="fullAddress" display-name-key="Full address" description-key="Full address" of-type="SingleLine.Text" usage="bound" required="false" />
+    <property name="x" display-name-key="x" description-key="X cords" of-type="Decimal" usage="bound" required="false" />
+    <property name="y" display-name-key="y" description-key="y cords" of-type="Decimal" usage="bound" required="false" />
 
     <resources>
       <code path="index.ts" order="1"/>

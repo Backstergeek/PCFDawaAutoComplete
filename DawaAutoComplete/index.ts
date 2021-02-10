@@ -16,9 +16,10 @@ export class DawaAutoComplete implements ComponentFramework.StandardControl<IInp
 	private _streetNumber: string;
 	private _streetName: string;
 	private _fullAddress: string;
+	private _x: number;
+	private _y: number;
 
-
-	private changeAddress(add:string, zip:string, city:string, nr:string, full:string) {
+	private changeAddress(add:string, zip:string, city:string, nr:string, full:string,x:number,y:number) {
 		this._address = add;
 		this._city = city;
 		this._zip = zip;
@@ -26,6 +27,8 @@ export class DawaAutoComplete implements ComponentFramework.StandardControl<IInp
 		this._streetName = add;
 		this._streetNumber = nr;
 		this._fullAddress = full;
+		this._x = x;
+		this._y = y;
 		this.localNotifyOutputChanged();
 	}
 	/**
@@ -86,7 +89,9 @@ export class DawaAutoComplete implements ComponentFramework.StandardControl<IInp
 			zipcode: this._zip,
 			fullAddress: this._fullAddress,
 			streetNumber: this._streetNumber,
-			streetName: this._streetName
+			streetName: this._streetName,
+			x: this._x,
+			y: this._y
 		};
 	}
 
