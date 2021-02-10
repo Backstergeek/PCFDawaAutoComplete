@@ -27,7 +27,11 @@ export const Dawa: React.FC<IdawaProps> = (props) => {
                 {add.map(a => (
                     <li onClick={(event) => {
                         if(props.changeAddress)
-                        props.changeAddress(a.adgangsadresse.vejnavn, a.adgangsadresse.postnr, a.adgangsadresse.postnrnavn,a.adgangsadresse.husnr, a.tekst)
+                        props.changeAddress(a.adgangsadresse.vejnavn, 
+                            a.adgangsadresse.postnr, 
+                            a.adgangsadresse.postnrnavn,
+                            a.adgangsadresse.husnr,
+                            a.tekst)
                         setTemp("");
                         setAdd([]);
                     }} key={a.adgangsadresse.id}>{a.tekst}</li>
